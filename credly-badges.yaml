@@ -1,0 +1,17 @@
+name: Update README with Credly badges
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  credly-badges:
+    name: Update README with Credly badges
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update README
+        uses: mikejoh/credly-badges@main
+        with:
+          CREDLY_USERNAME: <shaanahmed003@gmail.com>
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMIT_MESSAGE: "Update Credly badges!"
